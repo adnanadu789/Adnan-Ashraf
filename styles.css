@@ -1,0 +1,271 @@
+/* Basic Styling */
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px; /* Limits the max width for larger screens */
+    margin: 0 auto;
+}
+
+/* Navigation Bar */
+.navbar {
+    background: hwb(34 0% 83%);
+    color: white;
+    padding: 15px 0; /* Increased padding for better visual balance */
+    animation: slideInFromTop 1s ease-out; /* Slide-in animation */
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    animation: fadeIn 1s ease-out; /* Fade-in animation */
+}
+
+.navbar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-menu li {
+    margin-left: 20px;
+}
+
+.navbar-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px; /* Padding for background */
+    border-radius: 25px; /* Rounded corners */
+    background: transparent; /* Initial background */
+    transition: background 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.navbar-menu a:hover {
+    background: white; /* Background color on hover */
+    color: hwb(34 0% 83%); /* Change text color to match navbar background */
+    text-decoration: none; /* Ensure no underline on hover */
+}
+
+/* Cards Section */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ensures cards are responsive */
+    gap: 20px;
+    padding: 40px 0; /* Increased padding for better spacing */
+}
+
+.card {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    animation: fadeInUp 1s ease-out; /* Fade-in up animation */
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background: hwb(34 0% 83%);
+    color: white;
+    padding: 20px 0; /* Increased padding for better spacing */
+    text-align: center;
+    width: 100%;
+    position: relative; /* Ensures full width coverage */
+    left: 0;
+    bottom: 0;
+    animation: slideInFromBottom 1s ease-out; /* Slide-in animation */
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Footer Icons */
+.footer-icons {
+    display: flex;
+    gap: 20px; /* Space between icons */
+    margin-top: 10px; /* Space above icons */
+}
+
+.footer-icon {
+    color: white;
+    text-decoration: none;
+    font-size: 24px; /* Size of the icons */
+    transition: color 0.3s ease;
+}
+
+.footer-icon:hover {
+    color: #ddd; /* Change color on hover */
+}
+
+.footer-icons i {
+    vertical-align: middle; /* Align icons properly with text */
+}
+
+/* Overlay */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#overlay-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1366px) {
+    .navbar-menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navbar-menu li {
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .navbar-menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navbar-menu li {
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-menu li {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-brand {
+        font-size: 20px;
+    }
+
+    .navbar-menu li {
+        margin: 5px 0;
+    }
+}
+
+/* Floating WhatsApp Icon */
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    background: #25D366; /* WhatsApp color */
+    color: white;
+    border-radius: 50%;
+    width: 60px; /* Width of the icon */
+    height: 60px; /* Height of the icon */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-size: 24px; /* Size of the icon */
+    z-index: 1000; /* Ensures it's above other elements */
+}
+
+.whatsapp-icon:hover {
+    background: #128C7E; /* Darker green on hover */
+}
+
+/* Title Section */
+.title-section {
+    text-align: center;
+    margin: 40px 0; /* Spacing around the title section */
+    opacity: 0; /* Initially hidden for animation effect */
+    animation: fadeInScale 1s ease-out forwards; /* Apply the animation */
+}
+
+/* Keyframes for animation */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.9); /* Start slightly smaller */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1); /* End at normal size */
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Start below the original position */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at the original position */
+    }
+}
+
+@keyframes slideInFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px); /* Start above the viewport */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at the original position */
+    }
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(100px); /* Start below the viewport */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at the original position */
+    }
+}
